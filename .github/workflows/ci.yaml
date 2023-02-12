@@ -46,6 +46,6 @@ jobs:
           push: true
           provenance: false
           tags: |
-            ghcr.io/zozman/redirect-url:latest
-            ghcr.io/zozman/redirect-url:${{ steps.short.outputs.sha_short }}
-            ghcr.io/zozman/redirect-url:${{ steps.long.outputs.sha_long }}
+            ghcr.io/zozman/redirect-url-container:latest
+            ghcr.io/zozman/redirect-url-container:${{ steps.short.outputs.sha_short }}
+            ghcr.io/zozman/redirect-url-container:${{ steps.long.outputs.sha_long }}
