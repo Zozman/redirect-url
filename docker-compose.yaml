@@ -1,0 +1,8 @@
+version: '3'
+services:
+    redirect:
+        build: .
+        environment:
+          - REDIRECT_ADDRESS="https://discord.gg/BQh4kXuJ"
+        ports:
+          - "80:80"
