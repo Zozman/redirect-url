@@ -27,7 +27,7 @@ jobs:
       
       - name: Generate Image Name
         id: name
-        uses: ASzc/change-string-case-action@v2
+        uses: ASzc/change-string-case-action@v5
         with:
           string: ${{ github.repository }}
 
@@ -47,9 +47,10 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           push: true
+          provenance: false
           tags: |
             ghcr.io/${{ steps.name.outputs.lowercase }}:latest
             ghcr.io/${{ steps.name.outputs.lowercase }}:${{ steps.short.outputs.sha_short }}
