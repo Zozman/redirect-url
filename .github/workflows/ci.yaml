@@ -24,12 +24,6 @@ jobs:
         name: Checkout Repo
         with:
           fetch-depth: "0"
-      
-      - name: Generate Image Name
-        id: name
-        uses: ASzc/change-string-case-action@v5
-        with:
-          string: ${{ github.repository }}
 
       - name: Get Short SHA Of Last Commit
         id: short
@@ -52,6 +46,6 @@ jobs:
           push: true
           provenance: false
           tags: |
-            ghcr.io/${{ steps.name.outputs.lowercase }}:latest
-            ghcr.io/${{ steps.name.outputs.lowercase }}:${{ steps.short.outputs.sha_short }}
-            ghcr.io/${{ steps.name.outputs.lowercase }}:${{ steps.long.outputs.sha_long }}
+            ghcr.io/zozman/redirect-url:latest
+            ghcr.io/zozman/redirect-url:${{ steps.short.outputs.sha_short }}
+            ghcr.io/zozman/redirect-url:${{ steps.long.outputs.sha_long }}
