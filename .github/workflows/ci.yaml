@@ -44,7 +44,7 @@ jobs:
           flavor: |
             latest=true
           tags: |
-            type=semver,pattern={{version}}
+            type=raw,value=${{ steps.tag.outputs.new_tag }}
             type=sha
             type=sha,format=long
 
